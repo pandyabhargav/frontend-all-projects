@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+   function customSplice(array, start, deleteCount, ...itemsToAdd) {
+    const removed = [];
+
+    // Handle negative start index
+    if (start < 0) {
+        start = array.length + start;
+        if (start < 0) {
+            start = 0;
+        }
+    }
+
+    // Handle delete count exceeding array length
+    if (deleteCount > array.length - start) {
+        deleteCount = array.length - start;
+    }
+
+    // Remove elements and store them
+    for (let i = 0; i < deleteCount; i++) {
+        const index = start + i;
+        removed.push(array[index]);
+        delete array[index];
+    }
+
+    // Compact the array
+    array = array.filter(item => item !== undefined);
+
+    // Move elements to make space for new items
+    const tail = array.splice(start + deleteCount);
+    array.length = start + itemsToAdd.length;
+    array.push(...itemsToAdd, ...tail);
+
+    return removed;
+}
+
+// Example usage
+let arr = [1, 2, 3, 4, 5];
+let removed = customSplice(arr, 2, 1); // Removes one element starting from index 2
+console.log(arr); // Output: [1, 2, 4, 5]
+console.log(removed); // Output: [3]
+
+customSplice(arr, 1, 0, 6, 7); // Inserts 6 and 7 at index 1 without removing any elements
+console.log(arr); // Output: [1, 6, 7, 2, 4, 5]
+
+removed = customSplice(arr, 2, 2, 8, 9); // Removes two elements starting from index 2 and inserts 8 and 9
+console.log(arr); // Output: [1, 6, 8, 9, 4, 5]
+console.log(removed); // Output: [7, 2]
+
+</script>
+</body>
+</html>

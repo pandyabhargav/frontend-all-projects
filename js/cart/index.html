@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="d-flex">
+                <div class="col-4">
+                    <div class="card p-5" style="width: 18rem;">
+                        <img class="card-img-top" src="http://www.azspagirls.com/files/2010/09/orange.jpg"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">orange</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <div class="col-12 d-flex d-flex justify-content-evenly">
+                                <a href="#" class="btn btn-primary mx-2">+</a>
+                                <h4 class="d-flex justify-content-center align-items-center">0</h4>
+                                <a href="#" class="btn btn-primary mx-2">-</a>
+                            </div>
+                            <div class="justify-content-center d-flex pt-3">
+                                <h1> $500</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card p-5" style="width: 18rem;">
+                        <img class="card-img-top"
+                            src="http://images.all-free-download.com/images/graphicthumb/vector_illustration_of_ripe_bananas_567893.jpg"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">banana</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <div class="col-12 d-flex d-flex justify-content-evenly">
+                                <a href="#" class="btn btn-primary mx-2">+</a>
+                                <h4 class="d-flex justify-content-center align-items-center">0</h4>
+                                <a href="#" class="btn btn-primary mx-2">-</a>
+                            </div>
+                            <div class="justify-content-center d-flex pt-3">
+                                <h1> $500</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card p-5" style="width: 18rem;">
+                        <img class="card-img-top"
+                            src="https://3.imimg.com/data3/IC/JO/MY-9839190/organic-lemon-250x250.jpg"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">lemon</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the
+                                bulk
+                                of the card's content.</p>
+                            <div class="col-12 d-flex d-flex justify-content-evenly">
+                                <a href="#" class="btn btn-primary mx-2" onclick="increment()">+</a>
+                                <h4 class="d-flex justify-content-center align-items-center" id="counting">0
+                                </h4>
+                                <a href="#" class="btn btn-primary mx-2" onclick="decrement()">-</a>
+                            </div>
+                            <div class="justify-content-center d-flex pt-3">
+                                <h1 id="prise"></h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script>
+        let data = 0;
+        let prise = "50";
+        i = 1;
+        document.getElementById("counting").innerText = data;
+        function increment() {
+            data++;
+            document.getElementById("counting").innerText = data;
+
+            if (data === i++) {
+                var total = prise * data;
+            }
+            document.getElementById("prise").innerHTML = "$" + total;
+        }
+        function decrement() {
+            data--;
+            if (data < 0) {
+                data = 0;
+            }
+            document.getElementById("counting").innerText = data;
+            if (data === i--) {
+                var total = prise;
+            }
+            document.getElementById("prise").innerHTML = "$" + total;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" id="in">
+    <button onclick="getdata()">click me</button>
+
+    <script>
+        let data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        // for (let i = 0; i < data.length; i++) {
+        //     console.log(data[i]);
+        // }
+        // let x = 3;
+        // console.log(data[x]);
+
+
+        const getdata = () => {
+            let el = document.getElementById("in").value
+            if (el < 0) {
+                alert("enter a positve number")
+            }else if(el < data.length) {
+                console.log(data[el]);
+            }else if (typeof parseInt(el) === "number") {
+                alert("enter only number not a carecter");
+            } else if (el.trim() === "") {
+                alert("enter the number you typed a blank");
+            } else {
+                alert("404")
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+{
+  "admins": [
+    {
+      "id": "lxhtlxdk",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToXKt2YzgKPY2B4Pc06Us8mlmdnUHOIo7QMQ&s",
+      "title": "Eduction philoshopi",
+      "author": "Jay Roy",
+      "category": "Education"
+    },
+    {
+      "id": "lxhu6w1i",
+      "url": "https://m.media-amazon.com/images/I/410HvKUSIgL._SL500_.jpg",
+      "title": "The Art Of Tecnology",
+      "author": "Philip Done",
+      "category": "Education"
+    },
+    {
+      "id": "lxhtlxvs",
+      "url": "https://m.media-amazon.com/images/I/91ZT3v4cBVL._AC_UF1000,1000_QL80_.jpg",
+      "title": "The Art of Comicbook",
+      "author": "Mac Gurk",
+      "category": "Cartoon"
+    },
+    {
+      "id": "lxhu6wlm",
+      "url": "https://m.media-amazon.com/images/I/715jjfXVBlL._AC_UF1000,1000_QL80_.jpg",
+      "title": "Black Forest",
+      "author": "Shane Lee",
+      "category": "Horror"
+    },{
+      "id": "lxhu6wll",
+      "url": "https://m.media-amazon.com/images/I/51HmDzZYODS.jpg",
+      "title": "Horror of night",
+      "author": "Tom Colaman",
+      "category": "Horror"
+    },{
+      "id": "lxhu6woo",
+      "url": "https://m.media-amazon.com/images/I/71OXQZezcnL._AC_UF1000,1000_QL80_.jpg",
+      "title": "The History Of Word",
+      "author": "Susan Wise Bauer",
+      "category": "History"
+    },
+    {
+      "id": "lxhtlxop",
+      "url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1686319839l/160047094.jpg",
+      "title": "Dungeons and Drama",
+      "author": "Kristiy Boys",
+      "category": "Cartoon"
+    }
+  ],
+  "allbooks": []
+}

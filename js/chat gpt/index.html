@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission form</title>
+    <style>
+        .ad-head {
+            display: flex;
+            justify-content: center;
+            border: 3px solid black;
+        }
+
+        label {
+            font-size: 20px;
+        }
+
+        input {
+            border: 1px solid black;
+        }
+
+        td {
+            border: 10px solid black;
+        }
+
+        table {
+            border: 1px solid black;
+            text-align: center;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 ad-head m-5">
+                <h1>Admission Form 2023</h1>
+            </div>
+            <div class="d-flex justify-content-center">
+                <form method="post" class="m-5" onsubmit="formSubmit()">
+                    <label for="na">Name :-</label>
+                    <input type="text" id="na">
+                    <br /><br />
+                    <label for="fn">Father Name :-</label>
+                    <input type="text" id="fn">
+                    <br /><br />
+                    <!-- Add labels and IDs for the remaining fields -->
+                    <label for="mn">Mother name :-</label>
+                    <input type="text" id="mn">
+                    <br /><br />
+                    <label for="em">Email :-</label>
+                    <input type="email" id="em">
+                    <br /><br />
+                    <label for="ad">Address :-</label>
+                    <input type="text" id="ad">
+                    <br /><br />
+                    <label for="mo">Mobile No :-</label>
+                    <input type="number" id="mo">
+                    <br /><br />
+                    <label for="do">Dob :-</label>
+                    <input type="date" id="da">
+                    <br /><br />
+                    <label for="ca">Category :-</label>
+                    <input type="text" id="ca">
+                    <br /><br />
+                    <label for="ge">Gender :-</label>
+                    <input type="text" id="ge">
+                    <br /><br />
+                    <label for="co">Course :-</label>
+                    <input type="text" id="co">
+                    <br /><br />
+                    <button type="submit" class="p-2 bg-primary text-white">Submit</button>
+                </form>
+            </div>
+            <table width="1000" class="col-12">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Name</th>
+                        <th>Father name</th>
+                        <th>Mother name</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Contact No</th>
+                        <th>Dob</th>
+                        <th>Category</th>
+                        <th>Gender</th>
+                        <th>Course</th>
+                    </tr>
+                </thead>
+                <tbody id="dataTable"></tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script>
+        const data = [
+            {
+                Name: "bhargav",
+                FatherName: "kaushik bhai",
+                MotherName: "bhavana ben",
+                Email: "pandyabhargav707@gmail.com",
+                Address: "b-58 ram krishna soc varacha surat",
+                ContactNo: "9274322761",
+                Dob: "30-7-2004",
+                Category: "upper-caste",
+                Gender: "Male",
+                Course: "full-stack developer"
+            },
+            // Add other data entries as needed
+        ];
+
+        const dataTable = document.getElementById('dataTable');
+
+        const display = () => {
+            data.forEach((d, index) => {
+                dataTable.innerHTML += `<tr><td>${index + 1}</td><td>${d.Name}</td><td>${d.FatherName}</td><td>${d.MotherName}</td><td>${d.Email}</td><td>${d.Address}</td><td>${d.ContactNo}</td><td>${d.Dob}</td><td>${d.Category}</td><td>${d.Gender}</td><td>${d.Course}</td></tr>`;
+            });
+        };
+
+        const formSubmit = () => {
+            event.preventDefault();
+
+            let uname = document.getElementById('na').value;
+            let ufana = document.getElementById('fn').value;
+            let umana = document.getElementById('mn').value;
+            let uemai = document.getElementById('em').value;
+            let uaddr = document.getElementById('ad').value;
+            let ucont = document.getElementById('mo').value;
+            let udob = document.getElementById('da').value;
+            let ucate = document.getElementById('ca').value;
+            let ugen = document.getElementById('ge').value;
+            let ucour = document.getElementById('co').value;
+
+            let dataObj = {
+                Name: uname,
+                FatherName: ufana,
+                MotherName: umana,
+                Email: uemai,
+                Address: uaddr,
+                ContactNo: ucont,
+                Dob: udob,
+                Category: ucate,
+                Gender: ugen,
+                Course: ucour
+            };
+
+            data.push(dataObj);
+            display();
+            console.log(data);
+        };
+
+        // Display initial data
+        display();
+    </script>
+</body>
+
+</html>
